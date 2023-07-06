@@ -12,7 +12,7 @@ storageBodegas.use((req,res,next)=>{
 })
 storageBodegas.get("/",(req,res)=>{
     con.query(
-        /*sql*/`SELECT * FROM bodegas`,
+        /*sql*/`SELECT * FROM bodegas ORDER BY nombre ASC`,
         (err,data,fill)=>{
             res.send(JSON.stringify(data));
         }
