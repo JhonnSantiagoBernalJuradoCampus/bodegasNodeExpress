@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import mysql from 'mysql2';
 import {Router} from "express";
-
+dotenv.config();
 const storageBodegas = Router();
 let con = undefined;
 
