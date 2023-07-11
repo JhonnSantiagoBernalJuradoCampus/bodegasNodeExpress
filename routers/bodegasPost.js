@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import mysql from 'mysql2';
 import { Router } from "express";
+import proxyBodegas from "../middleware/proxyBodegas.js";
 dotenv.config();
 const storageBodegasPost = Router();
 let con = undefined;
@@ -10,7 +11,7 @@ storageBodegasPost.use((req, res, next) => {
     con = mysql.createPool(my_config);
     next();
 })
-storageBodegasPost.post("/", (req, res) => {
+storageBodegasPost.post("/", proxyBodegas, (req, res) => {
     /**Los parametros que recibe son:
     {
         "id": 200,
@@ -19,8 +20,8 @@ storageBodegasPost.post("/", (req, res) => {
         "estado": 1,
         "created_by": 11,
         "update_by": null,
-        "created_at": "2022-06-02 15:33:48",
-        "updated_at": "2022-06-02 15:33:48",
+        "created_at": null,
+        "updated_at": null,
         "deleted_at": null
     }
      */
@@ -34,6 +35,7 @@ storageBodegasPost.post("/", (req, res) => {
                 console.error(err);
                 res.status(500).send("Error al agregar la bodega");
             } else {
+                console.log(req.body);
                 res.send("Se ha agregado con éxito");
             }
         }
