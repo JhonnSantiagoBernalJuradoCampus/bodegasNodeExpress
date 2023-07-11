@@ -15,7 +15,6 @@ storageProductos.get("/", total, (req, res) => {
     con.query(
         /*sql */`SELECT * FROM productos ORDER BY total DESC;`,
         (err,data,fill)=>{
-            console.log(data)
             res.send(JSON.stringify(data));
         }
     )
