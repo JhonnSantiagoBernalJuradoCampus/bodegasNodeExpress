@@ -14,15 +14,15 @@ storageBodegasPost.use((req, res, next) => {
 storageBodegasPost.post("/", proxyBodegas, (req, res) => {
     /**Los parametros que recibe son:
     {
-        "id": 200,
-        "nombre": "asdefg",
-        "id_responsable": 11,
-        "estado": 1,
-        "created_by": 11,
-        "update_by": null,
-        "created_at": null,
-        "updated_at": null,
-        "deleted_at": null
+        "ID": 1111,
+        "nom_com": "asdefg",
+        "idResponsable": 11,
+        "Estado": 1,
+        "Creado": 11,
+        "Actualizado": null,
+        "createdAt": null,
+        "ActualizadoAt": null,
+        "DeletedAt": null
     }
      */
     const { id, nombre, id_responsable, estado, created_by, update_by, created_at, updated_at, deleted_at } = req.body;

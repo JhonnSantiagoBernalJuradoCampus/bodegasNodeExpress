@@ -77,7 +77,8 @@ ALTER TABLE inventarios ADD CONSTRAINT inventarios_productos_fk FOREIGN KEY(id_p
 ALTER TABLE inventarios ADD CONSTRAINT inventarios_users_fk FOREIGN KEY(created_by) REFERENCES users(id);
 ALTER TABLE inventarios ADD CONSTRAINT inventarios_update_fk FOREIGN KEY(update_by) REFERENCES users(id);
 
-SELECT * FROM bodegas WHERE id = 200;
+SELECT * FROM bodegas WHERE id = 11;
+SELECT * FROM productos;
 
 
 INSERT INTO `bodegas` (`id`, `nombre`, `id_responsable`, `estado`, `created_by`, `update_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
